@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<head th:replace="fragments/head :: head"><title>Admin page</title></head>
+
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<div class="container-fluid d-flex flex-row vh-100 p-0">
+
+    <div th:replace="fragments/navigation :: navigation(currentPage='admin')"></div>
+
+    <div class="tab-content flex-grow-1 bg-light p-3">
+
+        <div th:replace="fragments/admin-panel"></div>
+        <div th:replace="fragments/user-panel :: panel(isActive=false)"></div>
+
+    </div>
+</div>
+
+<div th:replace="fragments/user-form"></div>
+
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script th:src="@{/js/modal.js}"></script>
+
+</body>
+</html>

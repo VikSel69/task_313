@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<head th:replace="fragments/head :: head"><title>User page</title></head>
+
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<div class="container-fluid d-flex flex-row vh-100 p-0">
+
+    <div th:replace="fragments/navigation :: navigation(currentPage='user')"></div>
+
+    <div class="tab-content flex-grow-1 bg-light p-3">
+
+        <div th:replace="fragments/user-panel :: panel(isActive=true)"></div>
+
+    </div>
+</div>
+
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+<ul th:fragment="navigation(currentPage)" class="nav flex-column nav-tabs bg-white" id="myTab" role="tablist">
+  <li sec:authorize="hasRole('ADMIN')" class="nav-item mt-3" role="presentation">
+    <a class="nav-link btn pl-5 pr-5"  th:classappend="${currentPage} == 'admin' ? 'btn-primary activ' : 'btn-light'" id="admin-area-tab" data-toggle="tab" href="#admin-area" role="tab" aria-controls="admin-area" aria-selected="true">Admin</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link btn pl-5 pr-5"  th:classappend="${currentPage} == 'user' ? 'btn-primary mt-3 activ' : 'btn-light'" id="user-area-tab" data-toggle="tab" href="#user-area" role="tab" aria-controls="user-area" aria-selected="false">User</a>
+  </li>
+</ul>
